@@ -8,20 +8,20 @@ import (
 
 func main() {
 
-	file, err := os.Open("Hangman.txt")
+	file, err := os.Open("Hangman.txt") // ouverture du fichier Hangman.txt
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	ReadFile("")
+	ReadFile("") // apel de la fonction
 
-	defer file.Close()
+	defer file.Close() // fermeture du fichier
 }
 
 func ReadFile(Mot string) []string {
 
-	var Tableau = []string{"generate", "string", "number", "make", "find", "grow", "array", "node", "chicago", "list", "do", "type", "78", "before", "23", "structure", "int", "drink", "7", "set", "car", "get", "random", "are", "now", "number", "mod", "after", "file", "ynov", "print", "keep", "windows", "show", "read", "86", "hangman", "a"}
+	var Tableau = []string{"generate", "string", "number", "make", "find", "grow", "array", "node", "chicago", "list", "do", "type", "78", "before", "23", "structure", "int", "drink", "7", "set", "car", "get", "random", "are", "now", "number", "mod", "after", "file", "ynov", "print", "keep", "windows", "show", "read", "86", "hangman", "a"} // Fichier Hangman.txt en tableau
 
 	fmt.Println(Tableau[0]) // Ecrire le premier élément du tableau
 
