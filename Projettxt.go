@@ -2,36 +2,51 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"log"
 	"os"
 )
 
 func main() {
 
-	file, _ := os.Open("Hangman.txt")
+	file, err := os.Open("Hangman.txt")
 
-	data, err := ioutil.ReadFile("Hangman.txt")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
-	fmt.Println(string(data))
+
+	ReadFile("")
 
 	defer file.Close()
 }
 
 func ReadFile(Mot string) []string {
 
-	var Tableau []string
-
-	fmt.Println(Tableau[0])
-	fmt.Println(Tableau[len(Tableau)-1])
+	var Tableau = []string{"Hangman.txt"}
 
 	for _, i := range Tableau {
 		if i == "\n" {
 			Tableau = append(Tableau, Mot)
 			Mot = ""
+		} else {
+			Mot += string(i)
 		}
 	}
+
+	fmt.Println(Tableau)
+
 	return Tableau
 
 }
+
+/*	for _, i := range Tableau {
+		if i == "\n" {
+			Tableau = append(Tableau, Mot)
+			Mot = ""
+		} else {
+			Mot += string(i)
+		}
+	}
+
+	if Mot == "before" {
+		fmt.Println(string(Tableau[14]) + 1)
+	}*/
