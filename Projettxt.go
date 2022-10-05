@@ -37,16 +37,3 @@ func ReadFile(Mot string) []string {
 	return Tableau
 
 }
-
-/*	for _, i := range Tableau {
-		if i == "\n" {
-			Tableau = append(Tableau, Mot)
-			Mot = ""
-		} else {
-			Mot += string(i)
-		}
-	}
-
-	if Mot == "before" {
-		fmt.Println(string(Tableau[14]) + 1)
-	}*/
